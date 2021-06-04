@@ -3,20 +3,12 @@ from predictor import Predictor
 if __name__ == '__main__':
     data = 'data/' + 'train.txt'
     predictor = Predictor(data)
-    # print("Predict next single word given user input.")
-    # predictor.demo_word()
-    # print("Generate a sentence given user input.")
-    # predictor.demo_sentence()
-
-    # sentence_starters = ['would you rather', 'the most', 'apples and', 'what', 'pineapple', 'watermelon', 'pineapples']
-    # print("Testing Accuracy of model on starter sentences from \"test.txt\" (n=100). This process takes a couple of minutes.")
-    # print("Model accuracy on predicting exact next word: {}%".format(predictor.test("data/test.txt")))
     
-    print(len(predictor.unigrams.keys()))
-    print(len(predictor.bigrams.keys()))
-    print(len(predictor.trigrams.keys()))
-    print(len(predictor.fourgrams.keys()))
-    print(len(predictor.fivegrams.keys()))
+    print("Number of Unigrams", len(predictor.unigrams.keys()))
+    print("Number of Bigrams", len(predictor.bigrams.keys()))
+    print("Number of trigrams", len(predictor.trigrams.keys()))
+    print("Number of four grams", len(predictor.fourgrams.keys()))
+    print("Number of five grams", len(predictor.fivegrams.keys()))
     
     
     print("finished")

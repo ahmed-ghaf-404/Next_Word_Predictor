@@ -4,6 +4,7 @@ import os
 import time as time
 import json
 import enchant
+from nltk.corpus import words
  
 STOPWORDS = ['amazon', 'amazoncom', 'amazonca', 'amazoncouk', 'amazonde', 'amazonfr', 'amazonit', 'amazones',
              'amazonca']
@@ -32,6 +33,7 @@ class Predictor:
         self.initialize_dicts(files_to_load, training_data)
 
     # initialize_dicts() loads in the data from the ngram files in the "saved" folder if they exists; Otherwise, it invokes generate_ngrams() on the training data from the "train.txt" file in the "data" folder
+   
     def initialize_dicts(self, files_to_load, training_data):
         count = 0
         import pickle
@@ -155,7 +157,7 @@ class Predictor:
     #  Reads in a txt file, line by line into a list
     #  Each index of the list is one line of the .txt file
     def read_data(self, data_file):
-        with open(data_file, "r", encoding="ascii") as f:  # opens the data_file
+        with open(data_file, "r", encoding="utf-8") as f:  # opens the data_file
             # This state reads in each line of the data file
             # All characters are made lowercase
             # We use regex to remove any characters that are not a whitespace character, or a letter or digit
